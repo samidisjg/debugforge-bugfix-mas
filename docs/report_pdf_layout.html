@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Fixing MAS Report</title>
+  <link rel="stylesheet" href="./report_pdf_style.css">
+</head>
+<body>
+  <section class="cover">
+    <span class="tag">CTSE Assignment 2</span>
+    <h1>Bug Fixing MAS</h1>
+    <p class="subtitle">Design, Implementation, and Evaluation Report</p>
+
+    <div class="meta">
+      <p><strong>Project Title:</strong> Locally Hosted Multi-Agent Bug Fixing System</p>
+      <p><strong>Team:</strong> [Team Name]</p>
+      <p><strong>Module:</strong> [Module Code / Name]</p>
+      <p><strong>Submission Date:</strong> [YYYY-MM-DD]</p>
+      <p><strong>Members:</strong> [Member 1], [Member 2], [Member 3], [Member 4]</p>
+    </div>
+
+    <p class="footer-note">Replace bracketed placeholders before export.</p>
+  </section>
+
+  <section class="page-break">
+    <h2>Table of Contents</h2>
+    <div class="toc">
+      <ol>
+        <li>Executive Summary</li>
+        <li>Problem Definition and Domain</li>
+        <li>System Architecture</li>
+        <li>Agent Design and Responsibilities</li>
+        <li>Tools and Environment Interaction</li>
+        <li>Workflow and Shared State</li>
+        <li>Implementation Details</li>
+        <li>Evaluation and Results</li>
+        <li>Limitations and Future Work</li>
+        <li>Appendices</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <h2>1. Executive Summary</h2>
+    <p>
+      This report presents a locally hosted multi-agent system (MAS) that automates bug analysis,
+      root cause detection, patch generation, validation, and reporting for software projects.
+    </p>
+
+    <h2>2. Problem Definition and Domain</h2>
+    <p><strong>Domain:</strong> Software Engineering / Internal Developer Tooling</p>
+    <p><strong>Objective:</strong> Automatically transform an issue signal into a validated patch and explainable report.</p>
+
+    <h2>3. System Architecture</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Core Components</h3>
+        <ul>
+          <li>Frontend Console (input + results)</li>
+          <li>FastAPI backend orchestration</li>
+          <li>LangGraph stateful workflow</li>
+          <li>Ollama-hosted local LLM</li>
+          <li>Tooling layer (search, patch, test, report)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Execution Properties</h3>
+        <ul>
+          <li>Local-only model execution</li>
+          <li>Structured state handoff across agents</li>
+          <li>Artifact generation (patch + markdown report)</li>
+          <li>Rollback support on failed validation</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>4. Agent Design and Responsibilities</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>Input</th>
+          <th>Output</th>
+          <th>Primary Tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Classifier</td>
+          <td>Bug report</td>
+          <td>Bug type, severity, summary</td>
+          <td>Bug report parser</td>
+        </tr>
+        <tr>
+          <td>Root Cause</td>
+          <td>Classification + project path</td>
+          <td>Suspected file/function + evidence</td>
+          <td>Code search, risk scanner</td>
+        </tr>
+        <tr>
+          <td>Fix Generator</td>
+          <td>Root cause + source file</td>
+          <td>Patch + diff + backup</td>
+          <td>Patch writer, backup tool</td>
+        </tr>
+        <tr>
+          <td>Tester</td>
+          <td>Patched workspace</td>
+          <td>Validation result + report</td>
+          <td>Test runner, report writer</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page-break">
+    <h2>5. Tools and Environment Interaction</h2>
+    <ul>
+      <li>Reads and scans source files by language.</li>
+      <li>Applies patches and writes backup artifacts.</li>
+      <li>Runs language-specific tests or fallback validation checks.</li>
+      <li>Emits trace logs and downloadable artifacts.</li>
+    </ul>
+
+    <h2>6. Workflow and Shared State</h2>
+    <pre>received -> classified -> analyzed -> patched -> tested/rolled_back</pre>
+    <p>
+      Key state fields: run_id, bug_report, project_path, language, classification,
+      root_cause, patch, test_results, final_summary.
+    </p>
+
+    <h2>7. Implementation Details</h2>
+    <h3>Local Deployment</h3>
+    <pre>pip install -e .
+python -m uvicorn bug_fixing_mas.api:app --reload</pre>
+
+    <h3>Autonomy Improvements</h3>
+    <ul>
+      <li>Low-signal prompts are augmented with static bug hints from code.</li>
+      <li>Fallback validation executes compile/syntax checks when tests are missing.</li>
+    </ul>
+  </section>
+
+  <section class="page-break">
+    <h2>8. Evaluation and Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Input Type</th>
+          <th>Outcome</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Python arithmetic bug</td>
+          <td>Demo</td>
+          <td>[Pass/Fail]</td>
+          <td>[Summary]</td>
+        </tr>
+        <tr>
+          <td>Java service error handling</td>
+          <td>Custom upload</td>
+          <td>[Pass/Fail]</td>
+          <td>[Summary]</td>
+        </tr>
+        <tr>
+          <td>Concurrency race condition</td>
+          <td>Demo</td>
+          <td>[Pass/Fail]</td>
+          <td>[Summary]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>9. Limitations and Future Work</h2>
+    <ul>
+      <li>Language-specific semantic checks can be deepened.</li>
+      <li>Automated test generation can be expanded beyond fallback checks.</li>
+      <li>Confidence scoring for patch quality can be added.</li>
+    </ul>
+
+    <h2>10. Appendices</h2>
+    <h3>A. Prompt Samples</h3>
+    <p>[Insert prompt snippets from docs/prompts]</p>
+
+    <h3>B. Example Report Excerpt</h3>
+    <p>[Paste one final report excerpt]</p>
+
+    <h3>C. Patch Diff Excerpt</h3>
+    <p>[Paste one short diff excerpt]</p>
+  </section>
+</body>
+</html>
