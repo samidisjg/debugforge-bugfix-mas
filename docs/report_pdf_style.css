@@ -1,0 +1,167 @@
+@page {
+	size: A4;
+	margin: 18mm 16mm 20mm 16mm;
+}
+
+:root {
+	--ink: #1f2937;
+	--muted: #475569;
+	--accent: #0f766e;
+	--line: #d1d5db;
+	--soft: #f8fafc;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	font-family: "Segoe UI", "Calibri", sans-serif;
+	font-size: 11pt;
+	line-height: 1.45;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin-top: 0;
+	color: #0b3b36;
+}
+
+h1 {
+	font-size: 26pt;
+	margin-bottom: 8pt;
+}
+
+h2 {
+	font-size: 16pt;
+	margin: 18pt 0 8pt;
+	padding-bottom: 4pt;
+	border-bottom: 1px solid var(--line);
+}
+
+h3 {
+	font-size: 12pt;
+	margin: 12pt 0 6pt;
+}
+
+p {
+	margin: 0 0 8pt;
+}
+
+ul,
+ol {
+	margin: 6pt 0 10pt 18pt;
+}
+
+li {
+	margin: 0 0 4pt;
+}
+
+.cover {
+	min-height: 250mm;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 1.5px solid var(--line);
+	border-radius: 10px;
+	padding: 24mm 18mm;
+	background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+}
+
+.cover .tag {
+	display: inline-block;
+	width: fit-content;
+	font-size: 9pt;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--accent);
+	border: 1px solid #99f6e4;
+	border-radius: 999px;
+	padding: 4px 10px;
+	margin-bottom: 16pt;
+}
+
+.cover .subtitle {
+	font-size: 13pt;
+	color: var(--muted);
+	margin-bottom: 16pt;
+}
+
+.meta {
+	margin-top: 26pt;
+	border-top: 1px solid var(--line);
+	padding-top: 12pt;
+}
+
+.meta p {
+	margin: 4pt 0;
+}
+
+.page-break {
+	page-break-before: always;
+}
+
+.toc {
+	background: var(--soft);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	padding: 12pt;
+}
+
+.grid-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10pt;
+}
+
+.card {
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	padding: 10pt;
+	background: #fff;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 8pt 0 12pt;
+}
+
+th,
+td {
+	border: 1px solid var(--line);
+	padding: 7px;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	background: #ecfeff;
+	color: #134e4a;
+	font-weight: 600;
+}
+
+code,
+pre {
+	font-family: "Consolas", "Courier New", monospace;
+}
+
+pre {
+	background: #0f172a;
+	color: #e2e8f0;
+	border-radius: 8px;
+	padding: 10pt;
+	overflow: auto;
+	font-size: 9.5pt;
+	line-height: 1.35;
+}
+
+.footer-note {
+	color: #64748b;
+	font-size: 9pt;
+	margin-top: 18pt;
+}

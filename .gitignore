@@ -1,0 +1,56 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.python-version
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+**/.cache/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Project runtime and generated outputs
+logs/runtime_workspaces/
+logs/*.jsonl
+Assignment 2/runtime_workspaces/
+
+# Python packaging/build outputs
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Go cache
+**/.gocache/
+
+# Local patch artifacts
+Assignment 2/logs/*.diff
