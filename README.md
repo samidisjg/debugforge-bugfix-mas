@@ -1,4 +1,4 @@
-﻿# Bug Fixing Assistant MAS
+﻿# Bug Fixing Assistant MAS 🐞🧙
 
 A locally hosted multi-agent system for CTSE Assignment 2. The system accepts a bug report, inspects a target project, proposes a fix, runs tests, and produces a final execution report.
 
