@@ -178,21 +178,9 @@ Run the unified evaluation harness with:
 python tests/run_all_evaluations.py
 ```
 
-## Suggested Team Ownership
+## Team Ownership
 
-- Member 1: `src/bug_fixing_mas/classifier_agent/`
-- Member 2: `src/bug_fixing_mas/root_cause_agent/`
-- Member 3: `src/bug_fixing_mas/fix_generator_agent/`
-- Member 4: `src/bug_fixing_mas/tester_agent/`
-
-## Report Pointers
-
-Make sure your report includes:
-- problem definition
-- architecture diagram
-- agent prompts and constraints
-- tool descriptions with sample input/output
-- shared state design including language and test command
-- logging and observability including duration per agent
-- evaluation strategy per member and unified harness
-- limitations of environment-specific tools for non-Python projects
+- IT22603418 P Pradicksha: `src/bug_fixing_mas/classifier_agent/`
+- IT22577160 Nimes R H R: `src/bug_fixing_mas/root_cause_agent/`
+- IT22602978 Daminidu T W T: `src/bug_fixing_mas/fix_generator_agent/`
+- IT22607232 Gamage S S J: `src/bug_fixing_mas/tester_agent/`
