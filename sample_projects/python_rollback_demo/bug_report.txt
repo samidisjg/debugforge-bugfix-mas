@@ -1,0 +1,3 @@
+﻿Rollback demo for validation pipeline.
+Use this scenario to demonstrate backup restoration when a bad patch is applied.
+The calculator should raise ZeroDivisionError when dividing by zero.

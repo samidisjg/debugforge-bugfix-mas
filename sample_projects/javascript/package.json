@@ -1,0 +1,7 @@
+{
+  "name": "bug-fixing-mas-js-sample",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node test_calculator.js"
+  }
+}

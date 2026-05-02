@@ -1,0 +1,3 @@
+﻿Wrong return value bug in parity checker.
+The function should return False for odd numbers, but it currently returns True for all inputs.
+The problem appears in the parity module.

@@ -1,0 +1,3 @@
+﻿Validation bug in age normalization.
+Negative input should raise ValueError, but the current implementation returns the negative age.
+The problem appears in the validator module.

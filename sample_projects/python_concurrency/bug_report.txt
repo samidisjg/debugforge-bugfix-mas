@@ -1,0 +1,3 @@
+﻿Race condition in threaded counter update.
+Multiple threads increment the same shared counter, but the final value is often below 2000.
+The bug looks like a missing lock around shared-state mutation in the counter module.
