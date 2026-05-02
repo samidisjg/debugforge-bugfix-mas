@@ -116,32 +116,19 @@ uvicorn bug_fixing_mas.api:app --reload
 
 Then open `http://127.0.0.1:8000` in your browser. The backend serves the separate `frontend/` folder and exposes the API under `/api/*`.
 
-6. Run the Python concurrency demo:
-
-```bash
-python -m bug_fixing_mas.main --project-path sample_projects/python_concurrency --language python --bug-report-file sample_projects/python_concurrency/bug_report.txt
-```
-
-7. Run the rollback demo:
+6. Run the rollback demo:
 
 ```bash
 python -m bug_fixing_mas.main --project-path sample_projects/python_rollback_demo --language python --bug-report-file sample_projects/python_rollback_demo/bug_report.txt
 ```
 
-8. Run additional Python fixtures:
+7. Run additional Python fixtures:
 
 ```bash
 python -m bug_fixing_mas.main --project-path sample_projects/python_validation --language python --bug-report-file sample_projects/python_validation/bug_report.txt
 python -m bug_fixing_mas.main --project-path sample_projects/python_wrong_return --language python --bug-report-file sample_projects/python_wrong_return/bug_report.txt
 ```
 
-9. Run against other language projects:
-
-```bash
-python -m bug_fixing_mas.main --project-path sample_projects/javascript --language javascript
-python -m bug_fixing_mas.main --project-path sample_projects/java --language java
-python -m bug_fixing_mas.main --project-path sample_projects/go --language go
-```
 
 ## Frontend Features
 
