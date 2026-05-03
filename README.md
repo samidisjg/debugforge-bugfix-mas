@@ -9,11 +9,6 @@ A locally hosted multi-agent system for CTSE Assignment 2. The system accepts a 
 - Agent 3: `Fix Generator Agent`
 - Agent 4: `Tester Agent`
 
-Each team member can own:
-- one agent prompt/persona
-- one custom Python tool
-- one evaluation script
-
 ## Tech Stack
 
 - `Ollama` for the local model
